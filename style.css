@@ -1,0 +1,273 @@
+body {
+    background-color: #ffc3da;
+}
+
+.envelope-wrapper {
+    height: 500px;
+}
+
+#envelope {
+    position: relative;
+    height: 300px;
+    width: 440px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30%;
+    background-color:#FF6863;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+#envelope:hover {
+    cursor: pointer;
+
+}
+
+.front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 3;
+
+}
+
+.flap {
+    border-top: 160px solid #FF6863;
+    border-left: 220px solid transparent;
+    border-right: 220px solid transparent;
+    border-bottom: 180px solid transparent;
+    transform-origin: top;
+
+}
+
+.pocket {
+    border-left: 220px solid #FF8BA0;
+    border-right: 220px solid #FF8BA0;
+    border-bottom: 205px solid #FFA8B5;
+    border-top: 98px solid transparent;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+}
+
+.letter {
+    position: relative;
+    background-color: white;
+    width: 90%;
+    height: 95%;
+    top: 5%;
+    border-radius: 10px;
+    box-shadow: 0 2px 26px rgba(0, 0, 0, .12);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.letter:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.words {
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 14%;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.line1 {
+    top: 10%;
+    text-align: center;
+}
+
+.line2 {
+    top: 20%;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.line3 {
+    top: 35%;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.line4 {
+    top: 45%;
+    text-align: center;
+}
+
+.line5 {
+    top: 55%;
+    text-align: center;
+}
+
+.line6 {
+    top: 62%;
+    text-align: center;
+}
+
+.open .flap {
+    transform: rotateX(180deg);
+    transition: transform 0.4s ease, z-index 0.6s;
+    z-index: 1;
+}
+
+.close .flap {
+    transform: rotateX(0deg);
+    transition: transform 0.4s 0.6s ease, z-index 1s;
+    z-index: 5;
+}
+
+.open .letter{
+    transform: translatey(-150px);
+    transition: transform 1s 0.5s ease, z-index 0.6s;
+    z-index: 2;
+
+}
+
+.open .words{
+    transform: translatey(-150px);
+    transition: transform 1s 0.5s ease, z-index 0.6s;
+    z-index: 2;
+
+}
+
+.close .letter {
+    transform: translatey(0deg);
+    transition: transform 0.4s ease, z-index 1s;
+    z-index: 1;
+}
+
+.hearts {
+    position: absolute;
+    top: 300px;
+    left: 350px;
+    right: 0;
+    z-index: 2;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+}
+
+.heart:before, .heart:after {
+    position: absolute;
+    content: "";
+    background-color: #d00000;
+    width: 100px;
+    height: 150px;
+    left: 100px;
+    top: 0;
+    border-radius: 100px 100px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0% 100%;
+
+}  
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.close .heart {
+    opacity: 0;
+    animation: none;
+}
+
+.a1 {
+    left: 28%;
+    transform: scale(0.6);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s ease-in-out 4 alternate;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+
+}
+
+.a2 {
+    left: 26%;
+    transform: scale(1);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 4s ease-in-out 2 alternate;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+
+.a3 {
+    left: 8%;
+    transform: scale(0.8);
+    opacity: 1;
+    animation: slideUp 4s linear 1, sideSway 2s ease-in-out 6 alternate;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+
+
+@keyframes slideUp {
+    0% {
+        top: 0px;
+    }
+    70% {
+        top: -500px;
+        }
+}
+
+@keyframes sideSway {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 50px;
+    }
+}
+
+.reset {
+    text-align: center;
+}
+
+.reset button {
+    font-weight: 800;
+    font-style: normal;
+    transition: all 0.1s linear;
+    background-color: transparent;
+    border: solid 2px #FF6863;
+    border-radius: 4px;
+    color: #FF6863;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 20px;
+    margin-top: 50px;
+    padding: 10px;
+    line-height: 1.5em;
+    text-decoration: none;
+    min-width: 150px;
+    outline: none;
+}
+
+.reset button:hover {
+    background-color: #FF6863;
+    cursor: pointer;
+    color: white;
+}
+
+.valentine {
+    text-align: center;
+    font-family: fantasy;
+    font-weight: 100;
+    color: #e04166;
+    margin: 30px;
+
+}
