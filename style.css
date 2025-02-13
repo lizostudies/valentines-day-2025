@@ -84,34 +84,34 @@ body {
 }
 
 .line1 {
-    top: 10%;
+    top: 55%;
     text-align: center;
 }
 
 .line2 {
-    top: 20%;
+    top: 75%;
     text-align: center;
     text-wrap: wrap;
 }
 
 .line3 {
-    top: 35%;
+    top: 100%;
     text-align: center;
     text-wrap: balance;
 }
 
 .line4 {
-    top: 45%;
+    top: 120%;
     text-align: center;
 }
 
 .line5 {
-    top: 55%;
+    top: 150%;
     text-align: center;
 }
 
 .line6 {
-    top: 62%;
+    top: 160%;
     text-align: center;
 }
 
